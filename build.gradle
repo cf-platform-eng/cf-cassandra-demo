@@ -10,14 +10,22 @@ buildscript {
     }
 }
 
+allprojects {
+    if (project.hasProperty('buildversion')) {
+        project.version = project.buildversion
+    } else {
+        project.version = '1.0'
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'spring-boot' 
 
 jar {
     baseName = 'cassandra-demo'
-    version = '0.0.1-SNAPSHOT'
 }
+
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
