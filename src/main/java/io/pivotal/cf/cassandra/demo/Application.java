@@ -60,4 +60,9 @@ public class Application implements CommandLineRunner {
         String cql = "create table if not exists person (id text, name text, age int, primary key(id))";
         cassandraTemplate().execute(cql);
     }
+
+    @RequestMapping(value = "/touch", method = RequestMethod.GET)
+    public String touch() {
+        return "Hello World!";
+    }
 }
