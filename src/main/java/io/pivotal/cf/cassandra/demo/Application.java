@@ -63,6 +63,6 @@ public class Application implements CommandLineRunner {
 
     @RequestMapping(value = "/touch", method = RequestMethod.GET)
     public String touch() {
-        return "Hello World!";
+        return "Hello World 2!";
     }
 }
