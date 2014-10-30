@@ -24,7 +24,6 @@ import java.util.UUID;
 @ComponentScan
 @EnableAutoConfiguration
 @EnableCassandraRepositories(basePackages = {"io.pivotal.cf.cassandra.demo"})
-@RestController
 public class Application implements CommandLineRunner {
 
     @Autowired
@@ -42,27 +41,10 @@ public class Application implements CommandLineRunner {
         SpringApplication.run(Application.class, args);
     }
 
-    @RequestMapping(value = "/people", method = RequestMethod.GET)
-    public Iterable<Person> list() {
-        return personRepository.findAll();
-    }
-
-    @RequestMapping(value = "/people", method = RequestMethod.POST)
-    public ResponseEntity<Person> create(@RequestBody Person person) {
-        String id = UUID.randomUUID().toString();
-        person.setId(id);
-        person = personRepository.save(person);
-        return new ResponseEntity<>(person, HttpStatus.CREATED);
-    }
-
     @Override
     public void run(String... args) throws Exception {
         String cql = "create table if not exists person (id text, name text, age int, primary key(id))";
         cassandraTemplate().execute(cql);
     }
 
-    @RequestMapping(value = "/touch", method = RequestMethod.GET)
-    public String touch() {
-        return "Hello FedEx!";
-    }
 }
