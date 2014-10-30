@@ -15,6 +15,6 @@ public class TouchControllerTest {
                 .get("/touch")
                 .then()
                 .statusCode(200)
-                .body(equalTo("Hello World!"));
+                .body(equalTo("Goodbye World!"));
     }
 }

@@ -9,7 +9,7 @@ public class TouchController {
 
     @RequestMapping(value = "/touch", method = RequestMethod.GET)
     public String touch() {
-        return "Hello World!";
+        return "Goodbye World!";
     }
 
 }
