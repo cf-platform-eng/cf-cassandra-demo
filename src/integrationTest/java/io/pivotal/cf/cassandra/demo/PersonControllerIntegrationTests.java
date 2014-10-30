@@ -18,7 +18,7 @@ import static org.hamcrest.CoreMatchers.hasItems;
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
 @IntegrationTest
-public class ApplicationTests {
+public class PersonControllerIntegrationTests {
 
     @Autowired
     CassandraOperations cassandraTemplate;

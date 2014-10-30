@@ -20,7 +20,14 @@ allprojects {
 
 apply plugin: 'java'
 apply plugin: 'idea'
-apply plugin: 'spring-boot' 
+apply plugin: 'spring-boot'
+
+sourceSets {
+    integrationTest {
+        java.srcDir file('src/integrationTest/java')
+        resources.srcDir file('src/integrationTest/resources')
+    }
+}
 
 jar {
     baseName = 'cassandra-demo'
@@ -45,8 +52,20 @@ dependencies {
     testCompile("com.jayway.restassured:rest-assured:2.3.2")
     testCompile("com.jayway.restassured:spring-mock-mvc:2.3.2")
     testCompile("org.mockito:mockito-core")
+
+    integrationTestCompile sourceSets.main.output
+    integrationTestCompile configurations.testCompile
+    integrationTestCompile sourceSets.test.output
+    integrationTestRuntime configurations.testRuntime
 }
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.12'
 }
+
+task integrationTest(type: Test) {
+    testClassesDir = sourceSets.integrationTest.output.classesDir
+    classpath = sourceSets.integrationTest.runtimeClasspath
+}
+
+check.dependsOn -= integrationTest

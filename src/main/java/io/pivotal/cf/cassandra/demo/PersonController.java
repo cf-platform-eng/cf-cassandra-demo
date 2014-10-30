@@ -34,8 +34,4 @@ public class PersonController {
         return new ResponseEntity<>(person, HttpStatus.CREATED);
     }
 
-    @RequestMapping(value = "/touch", method = RequestMethod.GET)
-    public String touch() {
-        return "Hello World!";
-    }
 }
