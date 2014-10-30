@@ -1,6 +1,9 @@
-package io.pivotal.cf.cassandra.demo;
+package io.pivotal.cf.cassandra.demo.controllers;
 
 import com.jayway.restassured.http.ContentType;
+import io.pivotal.cf.cassandra.demo.controllers.PersonController;
+import io.pivotal.cf.cassandra.demo.models.Person;
+import io.pivotal.cf.cassandra.demo.repositories.PersonRepository;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,9 +17,6 @@ import static org.mockito.Matchers.notNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-/**
- * Created by pivotal on 10/30/14.
- */
 public class PersonControllerTest {
 
     private PersonRepository mockPersonRepository;

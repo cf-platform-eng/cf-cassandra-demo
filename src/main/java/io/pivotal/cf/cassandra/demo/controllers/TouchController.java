@@ -1,4 +1,4 @@
-package io.pivotal.cf.cassandra.demo;
+package io.pivotal.cf.cassandra.demo.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

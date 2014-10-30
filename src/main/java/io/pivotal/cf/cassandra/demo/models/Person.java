@@ -1,4 +1,4 @@
-package io.pivotal.cf.cassandra.demo;
+package io.pivotal.cf.cassandra.demo.models;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.springframework.data.cassandra.mapping.PrimaryKey;

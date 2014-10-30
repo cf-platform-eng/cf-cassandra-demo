@@ -1,4 +1,4 @@
-package io.pivotal.cf.cassandra.demo;
+package io.pivotal.cf.cassandra.demo.config;
 
 import org.springframework.cloud.config.java.AbstractCloudConfig;
 import org.springframework.context.annotation.Bean;

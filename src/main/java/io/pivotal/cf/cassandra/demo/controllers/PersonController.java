@@ -1,6 +1,8 @@
-package io.pivotal.cf.cassandra.demo;
+package io.pivotal.cf.cassandra.demo.controllers;
 
 
+import io.pivotal.cf.cassandra.demo.models.Person;
+import io.pivotal.cf.cassandra.demo.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

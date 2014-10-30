@@ -25,7 +25,6 @@ apply plugin: 'spring-boot'
 sourceSets {
     integrationTest {
         java.srcDir file('src/integrationTest/java')
-        resources.srcDir file('src/integrationTest/resources')
     }
 }
 
